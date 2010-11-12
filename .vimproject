@@ -1,0 +1,32 @@
+SongFinder=~/projects/songfinder/ CD=. {
+  Project=project {
+    Build=build {
+      project.scala
+    }
+    Plugins=plugins {
+      plugins.scala
+    }
+  }
+  Songfinder=. {
+    API=songfinder-api/src/main/scala/ {
+      Config.scala
+      Song.scala
+      Songfinder.scala
+      Songrecord.scala
+    }
+    Create=songfinder-create/src/main/scala/ {
+      Activator.scala
+      MatchSong.scala
+    }
+    Record=songfinder-record/src/main/scala/ {
+      Activator.scala
+    }
+    Watch=songfinder-watch/src/main/scala/ {
+      Activator.scala
+    }
+    Save=songfinder-save/src/main/scala/ {
+      Activator.scala
+      Save.scala
+    }
+  }
+}
