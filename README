@@ -1,0 +1,69 @@
+Songfinder LF:
+--------------
+Der Songfinder ist ein mit Scala und OSGi entwickeltes Programm um Wunschtitel
+aus dem Internet aufzunehmen, hier am Beispiel von lastfm. Es ist aber auch jeder
+andere Internet-Radio-Sender möglich.
+
+In der vorliegenden Version läuft er unter Linux.
+
+
+Sie benötigen zusätzlich:
+
+- JDK
+- Firefox 
+- Streamripper: http://streamripper.sourceforge.net/
+- Sbt: http://code.google.com/p/simple-build-tool/
+- Pax Runner: http://paxrunner.ops4j.org/space/Pax+Runner
+- Lastfmproxy: http://www.gabifrings.de/download.html (ist bereits im Projekt enthalten)
+- GNU Screen: http://www.gnu.org/software/screen/screen.html
+- Python: http://www.python.org/
+
+
+Diese Vorbereitungen sollten sie vor dem Start treffen:
+
+Wenn sie einen anderen Sender außer lastfm aufzeichnen möchten, erstellen sie sich zwei
+shell-scripte wie z.B. startRecord.sh u. stopRecord.sh. Anschließend tragen sie in der Datei
+settings.properties unter start= <ihrStartScript.sh> und stop= <ihrStopScrip.sh> die
+Namen ihrer Scripte ein.
+
+Anschließen tragen sie in der Datei settings.properies unter radiopath= <ihreSender> den
+Namen des Ordners ein, den das Programm Streamripper beim Aufnehmen ihres Senders anlegen
+würde.
+
+Wenn sie von lastfm aufnehmen wollen, folgen sie bitte der Anleitung im Projektverzeichnis
+unter lastfmproxy-1.4d/lp-1.4d-manual.pdf. 
+
+Zum Starten geben Sie folgendes ein:
+
+$ sbt
+>bnd-bundle
+>quit
+$ pax-run.sh --bootDelegation="sun.*,com.sun.*" scan-composite:file:songfinder.composite
+
+Jetzt erstellt der radio/Songfinder in ihrem $HOME-Verzeichnis einen Ordner Songfinder mit
+folgender Struktur:
+
+Songfinder
+|-- last.fm
+|   `-- incomplete
+|-- Songs
+`-- WishList
+    `-- songs.xml
+
+
+Unter ../WishList/songs.xml tragen sie die Wunschtitel ein, z.B.
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<songs>
+  <title>Sänger - Titel</title>
+  .
+  .
+  .
+</songs>
+
+Wird ihr Wunschtitel nun im Radio gespielt wird er aufgezeichnet und erscheint im Ordner Songs.
+
+
+
+
+

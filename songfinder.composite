@@ -1,0 +1,13 @@
+scan-bundle:mvn:http://scala-tools.org/repo-releases!com.weiglewilczek.scala-lang-osgi/scala-library/2.8.0
+scan-bundle:mvn:http://scala-tools.org/repo-releases!com.weiglewilczek.slf4s/slf4s_2.8.0/1.0.0
+scan-bundle:mvn:org.slf4j/slf4j-api/1.6.1
+scan-bundle:mvn:org.slf4j/slf4j-simple/1.6.1
+
+
+scan-bundle:file:songfinder-create/lib_managed/scala_2.8.0/compile/scalamodules-core_2.8.0-2.0.0.jar
+scan-bundle:file:songfinder-api/target/scala_2.8.0/radio-songfinder-api_2.8.0-2.0.0.jar
+scan-bundle:file:songfinder-record/target/scala_2.8.0/radio-songfinder-record_2.8.0-2.0.0.jar
+scan-bundle:file:songfinder-save/target/scala_2.8.0/radio-songfinder-save_2.8.0-2.0.0.jar
+scan-bundle:file:songfinder-create/target/scala_2.8.0/radio-songfinder-create_2.8.0-2.0.0.jar
+scan-bundle:file:songfinder-watch/target/scala_2.8.0/radio-songfinder-watch_2.8.0-2.0.0.jar
+
